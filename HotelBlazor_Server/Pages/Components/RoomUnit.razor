@@ -1,0 +1,23 @@
+﻿@using HotelBlazor_Server.Model
+
+<div class="card p-4 bg-light">
+    <div class="card-body">
+        <h4>@Room.Id</h4>
+        <p>@Room.RoomName</p>
+        <p>@Room.Price</p>
+        <input
+            type="checkbox"
+            @bind-value="@Room.IsBooked"
+            @bind-value:event="oninput"
+            checked="@(Room.IsBooked ? "checked" : null)"/>
+        <p>@(Room.IsBooked ? "Occupied" : "Available")</p>
+        <DeleteEditBtnGroup IsAdmin="true"/>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public Room Room { get; set; }
+
+}

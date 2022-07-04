@@ -1,0 +1,26 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<div class="d-flex flex-column w-25">
+    <button class="btn btn-primary mb-4" @onclick="IncrementCount">Number Go Up</button>
+    <button class="btn btn-primary" @onclick="DecrementCount">Number Go Down</button>
+</div>
+
+@code {
+    private int currentCount = 15;
+
+    private void IncrementCount()
+    {
+        currentCount += 666;
+    }
+
+    private void DecrementCount()
+    {
+        currentCount--;
+    }
+}

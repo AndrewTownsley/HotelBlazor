@@ -1,0 +1,183 @@
+﻿@page "/bindprops"
+@using Model
+@using HotelBlazor_Server.Model
+
+<PageTitle>Bind Props Demo</PageTitle>
+
+    <h2 class="bg-light border p-2">
+        Property Binding in Blazor...
+    </h2>
+<section class="bg-info p-4">
+    <h2 class="bg-light border p-2">
+        First Room
+    </h2>
+    <div>
+        <p>Room: @Room.RoomName</p>
+        <p>Price: $@(Room.Price.ToString()).00 usd</p>
+    </div>
+    
+    <div>
+        <label>Room Availability:</label>
+        <input 
+            type="checkbox" 
+            @bind-value="@Room.IsBooked" 
+            @bind-value:event="oninput"
+            checked="@(Room.IsBooked ? "checked" : null)"
+        />
+        <p>@(Room.IsBooked ? "Unavailable" : "Book Now")</p>
+    </div>
+    
+    <input type="text" @bind-value="@Room.Price"/>
+    @*<input type="text" @bind-value="@Room.Price" @bind-value:event="oninput" />
+    *@
+    
+    <div>
+        <select @bind="_selectedRoomProps">
+            @foreach (var prop in Room.RoomProps)
+            {
+                <option>@prop.Name</option>
+            }
+        </select>
+        <span>@_selectedRoomProps</span>
+    </div>
+</section>
+
+<section class="bg-dark text-white">
+    <h2 class="text-info p-4">Room List</h2>
+    
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th class="text-white">RoomName</th>
+            <th class="text-white">Price</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in _roomsList)
+        {
+            <tr class="">
+                <td class=""><input type="text" @bind-value="@item.RoomName" /></td>
+                <td class=""><input type="text" @bind-value="@item.Price" /></td>
+
+                @foreach (var prop in Room.RoomProps)
+                {
+                    <td class="text-white">@(prop.Name): @prop.Value</td>
+@*                    <td class="text-white">@prop.Value</td>
+*@                }
+            </tr>
+        }
+        </tbody>
+    </table>
+    <div>
+        @foreach (var room in _roomsList)
+        {
+            <p>@room.RoomName's Price is: $@room.Price.00 usd</p>
+        }
+    </div>
+    
+</section>
+
+@code
+{
+
+    string _roomTableProps = "";
+    string _selectedRoomProps = "";
+    List<Room> _roomsList = new List<Room>();
+
+
+    Model.Room Room = new Room()
+    {
+        Id = 1,
+        RoomName = "Villa Suite",
+        Price = 399,
+        IsBooked= true,
+        RoomProps = new List<RoomProp>
+        {
+            new RoomProp
+            {
+                Id = 1,
+                Name = "Sq Ft",
+                Value="150"
+            },
+            new RoomProp
+            {
+                Id = 2,
+                Name = "Occupancy",
+                Value="3"
+            },  
+            new RoomProp
+            {
+                Id = 3,
+                Name = "King Size Bed",
+                Value="No"
+            }
+
+        }
+    };
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        _roomsList.Add(new Room()
+        {
+            Id = 201,
+            RoomName = "Villa Suite One Bed Room",
+            Price = 599,
+            IsBooked= true,
+            RoomProps = new List<RoomProp>
+            {
+                new RoomProp
+                {
+                    Id = 1,
+                    Name = "Sq Ft",
+                    Value="400"
+                },
+                new RoomProp
+                {
+                    Id = 2,
+                    Name = "Occupancy",
+                    Value="6"
+                },  
+                new RoomProp
+                {
+                    Id = 3,
+                    Name = "King Size Bed",
+                    Value="Yes"
+                }
+
+            }
+        }); 
+        
+        _roomsList.Add(new Room()
+        {
+            Id = 202,
+            RoomName = "Villa Suite Two Bed Room",
+            Price = 499,
+            IsBooked= true,
+            RoomProps = new List<RoomProp>
+            {
+                new RoomProp
+                {
+                    Id = 1,
+                    Name = "Sq Ft",
+                    Value="100"
+                },
+                new RoomProp
+                {
+                    Id = 2,
+                    Name = "Occupancy",
+                    Value="3"
+                },  
+                new RoomProp
+                {
+                    Id = 3,
+                    Name = "King Size Bed",
+                    Value="Yes"
+                }
+
+            }
+        });
+    }
+}

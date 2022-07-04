@@ -1,0 +1,99 @@
+﻿@page "/demohotel"
+@using Model
+
+<section>
+    <h2>Room List</h2>
+    @foreach (var room in _roomsList)
+    {
+
+        <RoomUnit Room="room"/>
+      @*  <div class="card p-4 bg-light">
+            <div class="card-body">
+                <h4>@room.Id</h4>
+                <p>@room.RoomName</p>
+                <p>@room.Price</p>
+                <input
+                    type="checkbox"
+                    @bind-value="@room.IsBooked"
+                    @bind-value:event="oninput"
+                    checked="@(room.IsBooked ? "checked" : null)"/>
+                <p>@(room.IsBooked ? "Occupied" : "Available")</p>
+                <DeleteEditBtnGroup IsAdmin="true"/>
+            </div>
+        </div>*@
+    }
+</section>
+
+
+
+
+
+@code {
+
+    List<Room> _roomsList = new List<Room>();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        _roomsList.Add(new Room()
+        {
+            Id = 201,
+            RoomName = "Villa Suite One Bed Room",
+            Price = 599,
+            IsBooked= true,
+            RoomProps = new List<RoomProp>
+            {
+                new RoomProp
+                {
+                    Id = 1,
+                    Name = "Sq Ft",
+                    Value="400"
+                },
+                new RoomProp
+                {
+                    Id = 2,
+                    Name = "Occupancy",
+                    Value="6"
+                },  
+                new RoomProp
+                {
+                    Id = 3,
+                    Name = "King Size Bed",
+                    Value="Yes"
+                }
+
+            }
+        }); 
+        
+        _roomsList.Add(new Room()
+        {
+            Id = 202,
+            RoomName = "Villa Suite Two Bed Room",
+            Price = 499,
+            IsBooked= true,
+            RoomProps = new List<RoomProp>
+            {
+                new RoomProp
+                {
+                    Id = 1,
+                    Name = "Sq Ft",
+                    Value="100"
+                },
+                new RoomProp
+                {
+                    Id = 2,
+                    Name = "Occupancy",
+                    Value="3"
+                },  
+                new RoomProp
+                {
+                    Id = 3,
+                    Name = "King Size Bed",
+                    Value="Yes"
+                }
+
+            }
+        });
+    }
+}
