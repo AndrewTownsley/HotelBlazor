@@ -1,0 +1,33 @@
+﻿
+<PageTitle>Life Cycle</PageTitle>
+
+<section>
+
+    <h3>Life Cycle COMPONENT</h3>
+
+
+    @foreach(var item in EventType)
+        {
+            <p>@item</p>
+            <p>@item</p>
+        }
+</section>
+
+@code {
+
+    [Parameter]
+    public int CountValue { get; set; }
+    List<string> EventType = new List<string>();
+
+    protected override void OnInitialized()
+    {
+        EventType.Add("Child - OnInitialized is Called");
+
+    }
+
+    protected override void OnParametersSet()
+    {
+        EventType.Add("Child - OnParametersSet is Called");
+    }
+
+}

@@ -1,0 +1,21 @@
+﻿@using HotelBlazor_Server.Model
+
+<div @onclick="(args) => AmenitySelectChange(args, Amenities.Name)" class="bg-light p-4 card col-5">
+    <h5>Amenities - @Amenities.Id</h5>
+    <p>@Amenities.Name</p>
+    <p>@Amenities.Description</p>
+</div>
+@code {
+
+    [Parameter]
+    public RoomAmenities Amenities { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnAmenitySelect { get; set; }
+
+    protected async Task AmenitySelectChange(MouseEventArgs e, string name)
+    {
+        await OnAmenitySelect.InvokeAsync((string)name);
+    }
+
+}

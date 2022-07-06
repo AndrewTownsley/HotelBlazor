@@ -3,25 +3,23 @@
 
 <section>
     <h2>Room List</h2>
+    <span>Rooms Selected = @SelectedRooms</span>
     @foreach (var room in _roomsList)
     {
 
-        <RoomUnit Room="room"/>
-      @*  <div class="card p-4 bg-light">
-            <div class="card-body">
-                <h4>@room.Id</h4>
-                <p>@room.RoomName</p>
-                <p>@room.Price</p>
-                <input
-                    type="checkbox"
-                    @bind-value="@room.IsBooked"
-                    @bind-value:event="oninput"
-                    checked="@(room.IsBooked ? "checked" : null)"/>
-                <p>@(room.IsBooked ? "Occupied" : "Available")</p>
-                <DeleteEditBtnGroup IsAdmin="true"/>
-            </div>
-        </div>*@
+        <RoomUnit Room="room" OnRoomSelection="RoomSelectionCounterChanged"/>
+   
     }
+    
+    <h3>Room Amenities</h3>
+    
+    @foreach (var amenity in _amenitiesList)
+    {
+        <RoomAmenity Amenities="@amenity" OnAmenitySelect="AmenitySelectChange"/>
+    }
+    
+    <p>@SelectedAmenity</p>
+
 </section>
 
 
@@ -30,7 +28,10 @@
 
 @code {
 
+    public int SelectedRooms { get; set; }
+    public string SelectedAmenity { get; set; }
     List<Room> _roomsList = new List<Room>();
+    List<RoomAmenities> _amenitiesList = new List<RoomAmenities>();
 
     protected override void OnInitialized()
     {
@@ -95,5 +96,42 @@
 
             }
         });
+
+        _amenitiesList.Add(new RoomAmenities
+        {
+            Id=111,
+            Name="Pool",
+            Description="Outdoor Pool open year round."
+        });
+        _amenitiesList.Add(new RoomAmenities
+        {
+            Id=222,
+            Name="Free Breakfast",
+            Description="Breakfast Buffet every morning."
+        });
+        _amenitiesList.Add(new RoomAmenities
+        {
+            Id=111,
+            Name="Rooftop Bar",
+            Description="Best views in the city.  Open only during summer."
+        });
     }
+
+    protected void RoomSelectionCounterChanged(bool isRoomSelected)
+    {
+        if (isRoomSelected)
+        {
+            SelectedRooms++;
+        }
+        else
+        {
+            SelectedRooms--;
+        }
+    }
+
+    protected void AmenitySelectChange(string amenity)
+    {
+        SelectedAmenity = amenity;
+    }
+
 }

@@ -27,8 +27,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxhem9yRGVtb3NcRGVtb0hvdGVsLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/Components/CounterBtnsGroup.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xDb3VudGVyQnRuc0dyb3VwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/Components/DeleteEditBtnGroup.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xEZWxldGVFZGl0QnRuR3JvdXAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/Components/LifeCycleComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xMaWZlQ3ljbGVDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/Components/RoomAmenity.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xSb29tQW1lbml0eS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/Components/RoomUnit.razor]
@@ -45,6 +57,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/LifeCycle.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlmZUN5Y2xlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Shared/SurveyPrompt.razor]
