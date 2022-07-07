@@ -1,6 +1,8 @@
+using DataAccess.Data;
 using HotelBlazor_Server.Data;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
+using Microsoft.EntityFrameworkCore;
+
+
 
 namespace HotelBlazor_Server
 {
@@ -11,6 +13,8 @@ namespace HotelBlazor_Server
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(("DefaultConnection")));
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
             builder.Services.AddSingleton<WeatherForecastService>();

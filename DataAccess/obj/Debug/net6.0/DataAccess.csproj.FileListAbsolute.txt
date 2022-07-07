@@ -1,0 +1,14 @@
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\bin\Debug\net6.0\DataAccess.runtimeconfig.json
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\bin\Debug\net6.0\DataAccess.dll
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\obj\Debug\net6.0\DataAccess.dll
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
+C:\Users\acer\OneDrive\C#\HotelBlazor\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
