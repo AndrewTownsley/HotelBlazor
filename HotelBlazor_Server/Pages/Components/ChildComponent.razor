@@ -1,0 +1,34 @@
+﻿`
+<div>
+    <div class="alert alert-info">
+        <p>@Title</p>
+        <p>@ChildContent</p>
+        <div class="alert alert-success">
+            <p>
+                @if (ChildContent == null)
+                {
+                    <span>HELLO FROM EMPTY RENDER FRAGMENT!!!!</span>
+                }
+                else
+                {
+                    <p>@ChildContent</p>
+                }
+
+            </p>
+        </div>
+    </div>
+    <button class="btn btn-danger" @onclick="OnClickBtnMethod">
+        Click Me
+    </button>
+</div>
+@code {
+
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickBtnMethod { get; set; }
+}

@@ -27,6 +27,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxhem9yRGVtb3NcRGVtb0hvdGVsLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/BlazorDemos/ParentChild.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxhem9yRGVtb3NcUGFyZW50Q2hpbGQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/Components/ChildComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xDaGlsZENvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/Components/CounterBtnsGroup.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xDb3VudGVyQnRuc0dyb3VwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

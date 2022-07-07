@@ -1,0 +1,29 @@
+﻿@page "/parentchild"
+@using System.Net.Mime
+
+<h3 class="text-danger">Parent - Child</h3>
+    <ChildComponent 
+        Title="Title passed from the parent component..."
+        OnClickBtnMethod="ShowMessage"
+    >
+        Render Fragment form the Parent Component...
+    </ChildComponent>
+    @*<ChildComponent Title="Second Instance of the Parent...">
+        New renderFragment..........
+    </ChildComponent>
+    <ChildComponent Title="THIRD instance of the Parent Component...">
+    </ChildComponent><ChildComponent Title="THIRD instance of the Parent Component...">
+        Yet Another render fragment........................
+    </ChildComponent>*@
+<p><b>@messageText</b></p>
+
+@code {
+    private string messageText = "";
+
+    private void ShowMessage(MouseEventArgs e)
+    {
+        messageText = "Text FROM PARENT, TRIGGERED By CLICK EVENT IN CHILD";
+    }
+
+
+}
