@@ -5,13 +5,22 @@
         <p>@ChildContent</p>
         <div class="alert alert-success">
             <p>
-                @if (ChildContent == null)
+                @if (DangerChildContent == null)
                 {
-                    <span>HELLO FROM EMPTY RENDER FRAGMENT!!!!</span>
+
+                    @if (ChildContent == null)
+                    {
+                        <span>HELLO FROM EMPTY RENDER FRAGMENT!!!!</span>
+                    }
+                    else
+                    {
+                    <p>@ChildContent</p>
+                    }
+
                 }
                 else
                 {
-                    <p>@ChildContent</p>
+                <span>@DangerChildContent</span>
                 }
 
             </p>
@@ -20,6 +29,7 @@
     <button class="btn btn-danger" @onclick="OnClickBtnMethod">
         Click Me
     </button>
+    <GrandChild />
 </div>
 @code {
 
@@ -30,5 +40,12 @@
     public RenderFragment ChildContent { get; set; }
 
     [Parameter]
+    public RenderFragment DangerChildContent { get; set; }
+
+    [Parameter]
     public EventCallback<MouseEventArgs> OnClickBtnMethod { get; set; }
+
+    [CascadingParameter]
+    public string MessageForGChild { get; set; }
+
 }

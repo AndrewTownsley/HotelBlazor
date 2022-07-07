@@ -4,6 +4,8 @@
     <h5>Amenities - @Amenities.Id</h5>
     <p>@Amenities.Name</p>
     <p>@Amenities.Description</p>
+    <p>@AmenityFragmentFirst</p>
+    <p>@AmenityFragmentSecond</p>
 </div>
 @code {
 
@@ -12,6 +14,12 @@
 
     [Parameter]
     public EventCallback<string> OnAmenitySelect { get; set; }
+
+    [Parameter]
+    public RenderFragment AmenityFragmentFirst { get; set; }
+
+    [Parameter]
+    public RenderFragment AmenityFragmentSecond { get; set; }
 
     protected async Task AmenitySelectChange(MouseEventArgs e, string name)
     {

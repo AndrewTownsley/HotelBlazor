@@ -15,7 +15,10 @@
     
     @foreach (var amenity in _amenitiesList)
     {
-        <RoomAmenity Amenities="@amenity" OnAmenitySelect="AmenitySelectChange"/>
+        <RoomAmenity Amenities="@amenity" OnAmenitySelect="AmenitySelectChange">
+            <AmenityFragmentFirst>#1</AmenityFragmentFirst>
+            <AmenityFragmentSecond>#2</AmenityFragmentSecond>
+        </RoomAmenity>
     }
     
     <p>@SelectedAmenity</p>

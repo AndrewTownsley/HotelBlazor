@@ -2,13 +2,24 @@
 @using System.Net.Mime
 
 <h3 class="text-danger">Parent - Child</h3>
-    <ChildComponent 
-        Title="Title passed from the parent component..."
-        OnClickBtnMethod="ShowMessage"
-    >
-        Render Fragment form the Parent Component...
+<CascadingValue Value="@MessageForGChild" Name="MessageForGrandChild">
+    <CascadingValue Value="@LuckyNumber" Name="LuckyNumber">
+
+    <ChildComponent Title="Title passed from the parent component..."
+                    OnClickBtnMethod="ShowMessage">
+        <ChildContent>
+            Render Fragment from Parent
+        </ChildContent>
+        <DangerChildContent>
+            Render Fragment from Parent
+        </DangerChildContent>
     </ChildComponent>
-    @*<ChildComponent Title="Second Instance of the Parent...">
+    </CascadingValue>
+</CascadingValue>
+<NewChildComponent 
+    placeholder="Placeholder from Component"
+/>
+@*<ChildComponent Title="Second Instance of the Parent...">
         New renderFragment..........
     </ChildComponent>
     <ChildComponent Title="THIRD instance of the Parent Component...">
@@ -18,12 +29,23 @@
 <p><b>@messageText</b></p>
 
 @code {
+
+    public int LuckyNumber = 7;
+    private string MessageForGChild = "MESSAGE FOR GC FROM PARENT COMPONENT";
     private string messageText = "";
 
     private void ShowMessage(MouseEventArgs e)
     {
         messageText = "Text FROM PARENT, TRIGGERED By CLICK EVENT IN CHILD";
     }
+
+    //[Parameter]
+    //public Dictionary<string, object> InputAttributesParent { get; set; } = new Dictionary<string, object>()
+    //{
+    //    { "required", "required" },
+    //    { "placeholder", "PARENT PLACEHOLDER" },
+    //    { "maxlength", 2 }
+    //};
 
 
 }

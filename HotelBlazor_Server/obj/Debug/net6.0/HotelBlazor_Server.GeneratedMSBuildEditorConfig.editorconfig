@@ -19,6 +19,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/AdvancedRouting.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWR2YW5jZWRSb3V0aW5nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/BlazorDemos/BindProperties.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxhem9yRGVtb3NcQmluZFByb3BlcnRpZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -43,8 +47,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xEZWxldGVFZGl0QnRuR3JvdXAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/Components/GrandChild.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xHcmFuZENoaWxkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/Components/LifeCycleComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xMaWZlQ3ljbGVDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/Components/NewChildComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xOZXdDaGlsZENvbXBvbmVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/Components/RoomAmenity.razor]
@@ -69,6 +81,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/LifeCycle.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlmZUN5Y2xlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Pages/RoutingDemo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm91dGluZ0RlbW8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/acer/OneDrive/C\#/HotelBlazor/HotelBlazor_Server/Shared/SurveyPrompt.razor]

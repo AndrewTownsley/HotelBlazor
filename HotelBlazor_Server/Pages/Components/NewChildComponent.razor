@@ -1,0 +1,26 @@
+﻿@using System.Collections.Specialized
+<div class="bg-light p-4">
+    <h4>NEW CHILD</h4>
+    <input id="roomName" @attributes="InputAttributes"/>
+</div>
+@code {
+
+  //  [Parameter]
+  //  public string Placeholder { get; set; } = "Default Value...";
+
+  //  [Parameter]
+  //  public string Required { get; set; }
+
+  //  [Parameter]
+  //  public string MaxLength { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> InputAttributes { get; set; } = new Dictionary<string, object>();
+
+    //{
+    //    { "required", "required" },
+    //    { "placeholder", "Default Placeholder" },
+    //    { "maxlength", 5 }
+    //};
+
+}
