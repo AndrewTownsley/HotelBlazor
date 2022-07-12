@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KX6HE53aQ6/CQAHSkILdz0JuMizO7UvlOcIXQHRdj/A=",
+  "Hash": "DZMyu1HLmGGeMfECojXqtDEZYfI2dj0tCjHaROZ2nq8=",
   "Source": "HotelBlazor_Server",
   "BasePath": "_content/HotelBlazor_Server",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\acer\\OneDrive\\C#\\HotelBlazor\\HotelBlazor_Server\\wwwroot\\js\\common.js",
+      "SourceId": "HotelBlazor_Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\acer\\OneDrive\\C#\\HotelBlazor\\HotelBlazor_Server\\wwwroot\\",
+      "BasePath": "_content/HotelBlazor_Server",
+      "RelativePath": "js/common.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\common.js"
     }
   ]
 }

@@ -1,12 +1,19 @@
 ﻿@page "/jsinblazor"
-@using Microsoft.EntityFrameworkCore.Diagnostics
 @inject IJSRuntime JsRuntime
+@using Microsoft.EntityFrameworkCore.Diagnostics
 
 
 <h3>JSinBlazor</h3>
 
-<div class="row">
-    <button class="btn btn-primary" @onclick="OpenAlert">Open Alert</button>
+<div >
+    <button class="btn btn-primary" @onclick="(()=>OpenAlert(ConfirmMessage))">Open Alert</button>
+</div>
+<div>
+    <button class="btn btn-success" @onclick="ToastSuccess">Open Alert</button>
+    <button class="btn btn-danger" @onclick="ToastFailure">Open Alert</button>
+</div><div>
+    <button class="btn btn-success" @onclick="SweetSuccess">Open Alert</button>
+    <button class="btn btn-danger" @onclick="SweetFailure">Open Alert</button>
 </div>
 <div class="row">
     @if (ConfirmResult)
@@ -24,8 +31,28 @@
     private string ConfirmMessage = "confirmation message....";
     private bool ConfirmResult { get; set; }
 
-    private async Task OpenAlert()
+    private async Task OpenAlert(string message)
     {
-        ConfirmResult = await JsRuntime.InvokeAsync<bool>("confirm", ConfirmMessage);
+        ConfirmResult = await JsRuntime.InvokeAsync<bool>("confirm", message);
+    }
+
+    private async Task ToastSuccess()
+    {
+        await JsRuntime.ToastrSuccess("Success From The ToastSuccess Task");
+    }
+
+    private async Task ToastFailure()
+    {
+        await JsRuntime.ToastrError("Error from the ToastError Task");
+    }
+
+    private async Task SweetSuccess()
+    {
+        await JsRuntime.InvokeVoidAsync("ShowSwal", "success", "SUCCESS FROM SWEET ALERTS");
+    }
+
+    private async Task SweetFailure()
+    {
+        await JsRuntime.InvokeVoidAsync("ShowSwal", "error", "ERROR FROM SWEET ALERTS");
     }
 }
