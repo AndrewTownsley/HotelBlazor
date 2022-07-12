@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "H/7WRYcsJzR1kSk4ARaNRt57JI3GelwjjIhIXRZ6wgsivDZUQ7qE676ikBQIdNCV/55YOg9QGc5uPb9e3aeHaw==",
+  "dgSpecHash": "cSACwRiPOKHcktic4JAfVKXsZn4cDGrMS+xbq5YT3MFrzlXU2Q8J7WEbUDYrbbifWamQLn8by6ERUKj6+2oG9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\acer\\OneDrive\\C#\\HotelBlazor\\HotelBlazor_Server\\HotelBlazor_Server.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\acer\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\acer\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.6\\microsoft.entityframeworkcore.6.0.6.nupkg.sha512",

@@ -1,0 +1,28 @@
+﻿@page "/twowaybinding"
+
+<h3>TwoWayBinding</h3>
+
+<div class="bg-danger p-4">
+    <h3>@ErrorMessage</h3>
+
+</div>
+<div class="bg-info p-4">
+    <input 
+        @bind="ErrorMessage" 
+        @bind:event="oninput" 
+        type="text" 
+        class="form-control"
+    />
+</div>
+
+@*<BindChildDemo @bind-ParentMessage = "ErrorMessage" @bind-ParentMessage:event="MessageChanged"/>
+*@
+
+@code {
+    private string ErrorMessage { get; set; } = "Two way Bound Message!!!!!!";
+
+    //void KeyUpHandler(KeyboardEventArgs args)
+    //{
+
+    //}
+}

@@ -1,0 +1,21 @@
+﻿<h3>BindChildDemo</h3>
+
+<div class="bg-body p-4 text-white">
+    <h3>Parent Message: @ParentMessage</h3>
+    <button class="btn btn-primary m-4" @onclick="UpdateMessage">Change Message</button>
+</div>
+
+@code {
+
+    [Parameter]
+    public string ParentMessage { get; set; }
+
+    [Parameter]
+    public EventCallback<string> MessageChanged { get; set; }
+
+    private async Task UpdateMessage()
+    {
+        ParentMessage = "Parent Message";
+        await MessageChanged.InvokeAsync(ParentMessage);
+    }
+}

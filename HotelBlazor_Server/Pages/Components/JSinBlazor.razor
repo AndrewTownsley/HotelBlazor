@@ -1,0 +1,31 @@
+﻿@page "/jsinblazor"
+@using Microsoft.EntityFrameworkCore.Diagnostics
+@inject IJSRuntime JsRuntime
+
+
+<h3>JSinBlazor</h3>
+
+<div class="row">
+    <button class="btn btn-primary" @onclick="OpenAlert">Open Alert</button>
+</div>
+<div class="row">
+    @if (ConfirmResult)
+    {
+    <p>True</p>
+    }
+    else
+    {
+        <p>False</p>
+    }
+</div>
+
+@code {
+
+    private string ConfirmMessage = "confirmation message....";
+    private bool ConfirmResult { get; set; }
+
+    private async Task OpenAlert()
+    {
+        ConfirmResult = await JsRuntime.InvokeAsync<bool>("confirm", ConfirmMessage);
+    }
+}

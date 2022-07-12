@@ -1,5 +1,6 @@
+using Business.Repository;
+using Business.Repository.IRepository;
 using DataAccess.Data;
-using HotelBlazor_Server.Data;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -14,11 +15,11 @@ namespace HotelBlazor_Server
 
             // Add services to the container.
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(("DefaultConnection")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            builder.Services.AddScoped<IHotelRoomRepository, HotelRoomRepository>();
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
-            builder.Services.AddSingleton<WeatherForecastService>();
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

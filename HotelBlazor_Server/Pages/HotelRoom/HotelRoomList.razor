@@ -1,0 +1,61 @@
+﻿@page "/hotel-room"
+@using Models
+@using Business.Repository.IRepository
+@inject IHotelRoomRepository HotelRoomRepository
+
+<div class="row mt-4">
+    <div class="col-8">
+        <h3 class="card-title text-dark">Hotel Room List</h3>
+    </div>
+    <div class="col-3 offset-1">
+        <NavLink class="btn btn-info form-control" href="hotel-room/create">
+            <span class="oi oi-plus"></span> Add New Room
+        </NavLink>
+    </div>
+</div>
+<div class="row p-4 mt-4">
+    <div class="col-12">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Occupancy</th>
+                <th>Base Rate</th>
+                <th>Area (Sq Ft.)</th>
+            </tr>
+            </thead>
+            <tbody>
+            @if(HotelRooms.Any())
+            {
+            @foreach (var room in HotelRooms)
+            {
+                <tr>
+                    <td>@room.Name</td>
+                    <td>@room.Occupancy</td>
+                    <td>@room.BaseRate.ToString("c")</td>
+                    <td>Example SQ Ft.</td>
+                </tr>
+            }
+            }
+            else
+            {
+            <tr>
+                <td colspan="5">No Records Found</td>
+            </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@code {
+
+    private IEnumerable<HotelRoomDTO> HotelRooms { get; set; } = new List<HotelRoomDTO>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        HotelRooms = await HotelRoomRepository.GetAllHotelRooms();
+    }
+
+}

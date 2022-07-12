@@ -1,0 +1,63 @@
+﻿@page "/hotel-room/create"
+@using Models
+@using Business.Repository.IRepository
+@inject IHotelRoomRepository HotelRoomRepository
+@inject NavigationManager NavigationManager
+
+<h3 class="card-title text-info mb-3 ml-3">Create Hotel Room</h3>
+
+<div class="row mt-2 mb-5">
+    <div class="card">
+        <div class>
+            <div class="card-body p-4">
+                <EditForm Model="HotelRoomModel" OnValidSubmit="HandleHotelRoomCreate">
+                    <DataAnnotationsValidator/>
+                    <ValidationSummary/>
+                    <div>
+                        <label>Name</label>
+                        <InputText @bind-Value="HotelRoomModel.Name" class="form-control"/>
+                        <ValidationMessage For="() => HotelRoomModel.Name"/>
+                    </div>
+                    <div>
+                        <label>Max Occupancy</label>
+                        <InputNumber @bind-Value="HotelRoomModel.Occupancy" class="form-control"/>
+                        <ValidationMessage For="() => HotelRoomModel.Occupancy"/>
+                    </div>
+                    <div>
+                        <label>Base Nightly Rate</label>
+                        <InputNumber @bind-Value="HotelRoomModel.BaseRate" class="form-control"/>
+                        <ValidationMessage For="() => HotelRoomModel.BaseRate"/>
+                    </div>
+                    <div>
+                        <label>Description</label>
+                        <InputText @bind-Value="HotelRoomModel.Details" class="form-control"/>
+                        <ValidationMessage For="() => HotelRoomModel.Details"/>
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-primary ">Save Room</button>
+                        <NavLink href="hotel-room" class="btn btn-secondary">Back to Rooms</NavLink>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    private HotelRoomDTO HotelRoomModel { get; set; } = new HotelRoomDTO();
+    private string Title { get; set; } = "Create";
+
+    private async Task HandleHotelRoomCreate()
+    {
+        var roomDetailsByName = await HotelRoomRepository.DuplicateRoomNameCheck(HotelRoomModel.Name);
+        if (roomDetailsByName != null)
+        {
+            // There is a duplicate room 
+            // Show Error
+            return;
+        }
+        var createdResult = await HotelRoomRepository.CreateHotelRoom(HotelRoomModel);
+        NavigationManager.NavigateTo("/hotel-room");
+    }
+}
