@@ -12,6 +12,11 @@
             <span class="oi oi-plus"></span> Add New Room
         </NavLink>
     </div>
+    <div class="col-3 offset-1">
+        <NavLink class="btn btn-info form-control" href="hotel-room/edit">
+            <span class="oi oi-plus"></span> Edit Room
+        </NavLink>
+    </div>
 </div>
 <div class="row p-4 mt-4">
     <div class="col-12">
@@ -34,6 +39,12 @@
                     <td>@room.Occupancy</td>
                     <td>@room.BaseRate.ToString("c")</td>
                     <td>Example SQ Ft.</td>
+                    <td>@room.Id</td>
+                    <td>
+                        <NavLink href="@($"hotel-room/edit/{room.Id}")" class="btn btn-secondary">
+                            Edit
+                        </NavLink>
+                    </td>
                 </tr>
             }
             }
@@ -51,7 +62,7 @@
 
 @code {
 
-    private IEnumerable<HotelRoomDTO> HotelRooms { get; set; } = new List<HotelRoomDTO>();
+    private IEnumerable<HotelRoomDto> HotelRooms { get; set; } = new List<HotelRoomDto>();
 
     protected override async Task OnInitializedAsync()
     {

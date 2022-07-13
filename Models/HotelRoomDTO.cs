@@ -2,7 +2,7 @@
 
 namespace Models
 {
-    public class HotelRoomDTO
+    public class HotelRoomDto
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Name cannot be blank")]

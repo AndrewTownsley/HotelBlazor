@@ -8,9 +8,9 @@ namespace Business.Mapper
     {
         public MappingProfile()
         {
-            CreateMap<HotelRoomDTO, HotelRoom>();
+            CreateMap<HotelRoomDto, HotelRoom>();
             CreateMap<HotelRoom, HotelRoom>();
-            CreateMap<HotelRoom, HotelRoomDTO>();
+            CreateMap<HotelRoom, HotelRoomDto>();
         }
     }
 }

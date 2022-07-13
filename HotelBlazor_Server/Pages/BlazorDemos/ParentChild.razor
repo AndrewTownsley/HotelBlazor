@@ -1,19 +1,22 @@
 ﻿@page "/parentchild"
+@inject IJSRuntime JsRuntime
 @using System.Net.Mime
+
 
 <h3 class="text-danger">Parent - Child</h3>
 <CascadingValue Value="@MessageForGChild" Name="MessageForGrandChild">
     <CascadingValue Value="@LuckyNumber" Name="LuckyNumber">
 
-    <ChildComponent Title="Title passed from the parent component..."
-                    OnClickBtnMethod="ShowMessage">
-        <ChildContent>
-            Render Fragment from Parent
-        </ChildContent>
-        <DangerChildContent>
-            Render Fragment from Parent
-        </DangerChildContent>
-    </ChildComponent>
+        <ChildComponent @ref="childComp" Title="Title passed from the parent component..."
+                        OnClickBtnMethod="ShowMessage">
+
+            <ChildContent>
+                Render Fragment from Parent
+            </ChildContent>
+            <DangerChildContent>
+                Render Fragment from Parent
+            </DangerChildContent>
+        </ChildComponent>
     </CascadingValue>
 </CascadingValue>
 <NewChildComponent 
@@ -28,8 +31,13 @@
     </ChildComponent>*@
 <p><b>@messageText</b></p>
 
+<div class="bg-info p-5">
+    <button class="btn btn-dark" @onclick="() => childComp.ShowToastrSuccessChild()">Toast Me</button>
+</div>
+
 @code {
 
+    private ChildComponent childComp;
     public int LuckyNumber = 7;
     private string MessageForGChild = "MESSAGE FOR GC FROM PARENT COMPONENT";
     private string messageText = "";

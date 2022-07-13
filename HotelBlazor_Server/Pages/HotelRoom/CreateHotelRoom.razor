@@ -1,4 +1,5 @@
 ﻿@page "/hotel-room/create"
+@page "/hotel-room/edit/{Id:int}"
 @using Models
 @using Business.Repository.IRepository
 @inject IHotelRoomRepository HotelRoomRepository
@@ -8,7 +9,7 @@
 
 <div class="row mt-2 mb-5">
     <div class="card">
-        <div class>
+        <div>
             <div class="card-body p-4">
                 <EditForm Model="HotelRoomModel" OnValidSubmit="HandleHotelRoomCreate">
                     <DataAnnotationsValidator/>
@@ -45,8 +46,26 @@
 
 @code {
 
-    private HotelRoomDTO HotelRoomModel { get; set; } = new HotelRoomDTO();
+    [Parameter]
+    public int? Id { get; set; }
+    private HotelRoomDto HotelRoomModel { get; set; } = new HotelRoomDto();
     private string Title { get; set; } = "Create";
+
+    protected override async Task OnInitializedAsync()
+    {
+        // If there is an Id parameter in the URL, that means the Page is being accessed Via the "edit" feature.
+        if (Id != null)
+        {
+            // Editing Room Functionality 
+            Title = "Edit Room";
+            HotelRoomModel = await HotelRoomRepository.GetHotelRoom(Id.Value);
+        }
+        else
+        {
+            // Create Room Functionality
+            HotelRoomModel = new HotelRoomDto();
+        }
+    }
 
     private async Task HandleHotelRoomCreate()
     {
